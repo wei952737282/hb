@@ -1,0 +1,122 @@
+.head-head-box{
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-size: 14px;
+	font-weight: 300;
+}
+.head-head-box-top{
+	padding-top: 20px;
+	 
+}
+.head-head-box-top div{
+	float: left;
+}
+.head-head-box-word{
+	margin-left: 105px;
+	margin-right: 85px;
+}
+.head-head-box-href img{
+	position: relative;
+	top: 2px;
+}
+.head-head-box-href{
+	margin-right: 20px;
+	cursor: pointer;
+}
+.head-head-box-href:hover span{
+	color: dodgerblue;
+}
+img.head-head-box-email{
+	position: relative;
+	top: 1px;
+}
+div.head-head-box-search{
+	width: 125px;
+	height: 25px;
+	background: white;
+	float: right;
+	margin-right: 115px;
+	position: relative;
+}
+.head-head-box-search img{
+	position: absolute;
+	right: 5px;
+	top: 50%;
+	margin-top: -5px;
+	cursor: pointer;
+}
+.head-head-box-search input{
+	border: 0;
+	padding: 0;
+	padding-left: 5px;
+	width: 100px;
+	height: 25px;
+	outline: none;
+	font-size: 12px;
+}
+.head-head-box-bottom{
+	margin-top: 30px;
+}
+.head-head-box-bottom img{
+	float: left;
+	margin-left: 110px;
+}
+.head-head-box-bottom div{
+	float: right;
+	margin-top: 30px;
+}
+.head-head-box-bottom-item{
+	width: 100px;
+	position: relative;
+	text-align: center;
+	cursor: pointer;
+	padding-bottom: 25px;
+	font-size: 20px;
+	font-weight: 300;
+}
+.head-head-box-bottom-item:hover{
+	color: dodgerblue;	
+}
+.head-head-box-bottom-item-active{
+	color: dodgerblue;	
+}
+.head-head-box-bottom-item-list{
+	position: absolute;
+	left: 0;
+	width: 80px;
+	top: 45px;
+	background: white;
+	padding: 10px;
+	z-index: 10;
+	cursor: pointer;
+	padding-bottom: 0px;
+	margin-top: 0 !important;
+	display: none;
+}
+div.head-head-box-bottom-item-list-word{
+	text-align: center;
+	color: black;
+	margin-top: 0;
+	margin-bottom: 5px;
+	width: 100%;
+	font-size: 14px;
+	font-weight: 400;
+	cursor: pointer;
+}
+div.head-head-box-bottom-item-list-word-active{
+	color: dodgerblue;
+}
+div.head-head-box-bottom-item-list-word:hover{
+	color: dodgerblue;
+}
+.head-head-box-bottom-item-list-padding{
+	height: 20px;
+	width: 100%;
+	padding: 0;
+	margin: 0 !important;
+	background: #1E90FF;
+}
+.head-head-box-bottom-item-click-active{
+	color: dodgerblue;
+}
