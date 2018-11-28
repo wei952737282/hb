@@ -1,0 +1,130 @@
+顶级栏目id：
+首页=1、学院概况=7、新闻中心=14、组织机构=18、教学科研=100、招生就业=104、系部设置=109
+
+首页子栏目id:
+新闻头条=2、学院简报=3、学院新闻=4、媒体聚焦=5、上级文件=6、学院文件=144、网站专题=145
+
+
+
+
+
+//加载首页所有二级菜单数据（pId对应导航栏中的Id）
+http://www.hbjsxy.cn/HBJSCMS/indexPageMenu.action
+数据结构：
+{
+    code:0(0正常，非0错误)，
+    data:[
+      {"id":8,"name":"学院简介","showType":3，pId:1}
+     ,{...}
+    ]
+}
+
+//加载首页所有新闻数据（新闻头条=2、学院简报=3、学院新闻=4、媒体聚焦=5、上级文件=6、学院文件=144、网站专题=145）
+http://www.hbjsxy.cn/HBJSCMS/indexPageNews.action
+数据结构：
+{
+    code:0(0正常，非0错误)，
+    data:[
+      {"id":13,"resume":"摘要" , "title":"","clickCount":1,"defaultImage":"","createDate":"2018-01-30 14:34:01","creator":"管理员"，channel："所属栏目Id"}
+     ,{...}
+    ]
+}
+
+
+
+//新闻列表
+http://www.hbjsxy.cn/HBJSCMS/frontNewsList.action
+参数：channel(栏目id),showType(展示类型：1列表，2相册，3文档，4栏目简介)，title(标题关键字用于搜索)，page(页码)，rows(每页条数)
+数据结构：
+{
+    code:0(0正常，非0错误)，
+    total:7(总条数)
+    data:[
+      {"id":24,"title":"",resume:"摘要","clickCount":0,"createDate":"2018-01-30 14:56:41","creator":"管理员"，"content":"内容"}
+     ,{...}
+    ]
+}
+
+//新闻详情
+http://www.hbjsxy.cn/HBJSCMS/newsDetail.action
+参数：id(新闻id)
+数据结构：
+{
+    code:0(0正常，非0错误)，
+    data{"content":"内容","id":67,"resume":"摘要","title":"","clickCount":0,"downFile":"附件","createDate":"2018-01-31 10:59:55","creator":"管理员"}
+
+}
+
+//父栏目下的子栏目(生成二级页面的侧边栏)
+http://www.hbjsxy.cn/HBJSCMS/getChannelItems.action
+参数：pid(栏目id)
+数据结构：
+{
+    code:0(0正常，非0错误)，
+    data[
+        {"id":2,"pId":1,"name":"新闻头条","showType":1,"isParent":0},{...}
+    ]
+
+}
+
+
+//更新点击次数
+http://www.hbjsxy.cn/HBJSCMS/clickCount.action
+参数：id(新闻id)
+数据结构：
+{
+    code:0(0正常，非0错误)，
+    
+}
+
+===============================
+//加载轮播图片
+http://www.hbjsxy.cn/HBJSCMS/frontImageList.action
+数据结构：
+{
+    "data":[
+       {"id":1,"image":"/HBJSCMS/imgManage/img.png",
+        "type":2,"url":"www.baidu.com"},｛...｝
+    ]
+    code:0(0正常，非0错误)，
+    
+}
+
+
+//加载默认图片（每个子页面头部的默认图片）
+http://www.hbjsxy.cn/HBJSCMS/frontDefaultImage.action
+数据结构：
+{
+    "data":
+       {"id":1,"image":"/HBJSCMS/imgManage/img.png",
+        "type":2,"url":"www.baidu.com"}
+    
+    code:0(0正常，非0错误)，
+    
+}
+
+
+//首页搜索框
+http://www.hbjsxy.cn/HBJSCMS/frontSearchNews.action
+参数：title（关键字），page（当前页），rows（每页显示条数）
+数据结构：
+{
+    code:0(0正常，非0错误)，
+    total:41(总条数)，
+    data[
+	{"resume":"概要","creator":"党委办公室","clickCount":8,"id":285,"title":"标题","defaultImage":"配图","createDate":"2018-11-18 19:22:41"}，....
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
