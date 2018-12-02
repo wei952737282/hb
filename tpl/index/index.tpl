@@ -27,6 +27,37 @@
 		width: 319px;
 		height: 249px;
 	}
+	.index-content-item-bottom-img{
+		position:absolute;
+		cursor:pointer;
+		width:100%;
+		height:100%;
+		top:0;
+		left:0;
+	}
+	.index-content-item-bottom-loopPoint{
+		position:absolute;
+		left:0;
+		right:0;
+		margin: 0 auto;
+		bottom:20px;
+		z-index:10;
+	}
+	.index-content-item-bottom-loopPoint li{
+		list-style:none;
+		float:left;
+		width:20px;
+		height:20px;
+		margin:0 2px;
+		border-radius:50%;
+		background:#ccc;
+		opacity:.6;
+		cursor:pointer;
+	}
+	.index-content-item-bottom-loopPoint li.active{
+		opacity:1;
+		background:#eee;
+	}
 	.index-content-item-bottom-content-box{
 		float: right;
 		width: 450px;
@@ -65,7 +96,10 @@
 		</div>
 		<div class="index-content-item-bottom-box clear">
 			<div class="index-content-item-bottom-img-box" style="position: relative;float: left;">
-				<img src="./img/content/content-news1.png" style="width: 300px;height: 240px;position: absolute;left: 0;top: 0;right: 0;bottom: 0;margin: auto;"/>
+				<div class="index-content-item-bottom-img index-content-item-bottom-img-clone" style="display:none;">
+					<img src="./img/content/content-news1.png" style="width: 300px;height: 240px;float:left;margin:auto"/>
+				</div>
+				<ul class="index-content-item-bottom-loopPoint"></ul>
 			</div>
 			<div class="index-content-item-bottom-content-box">
 				<div class="index-content-item-bottom-content-box-top">
