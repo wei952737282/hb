@@ -282,7 +282,7 @@ define(["jq", "hb"], function($, hb){
 		})				
 		//学院新闻 列表
 		$(".school-news-bottom-list-remove").remove();
-		for (var i = 1;i < obj.channel4.length;i++) {
+		for (var i = 0;i < obj.channel4.length;i++) {
 			var html = $(".school-news-bottom-list-clone").clone();
 			html.show();
 			html.addClass("school-news-bottom-list-remove").removeClass("school-news-bottom-list-clone");
