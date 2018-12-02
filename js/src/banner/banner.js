@@ -6,7 +6,7 @@ define(["jq", "text!./tpl/banner/banner.tpl", "css!../css/banner/banner.css"],fu
 		dataType: 'json',
 		async:false,
 		success:function(img){
-			imgArr = img.data;
+			imgArr = [{"image":"./img/index/loop1.jpg","id":9,"type":2,"url":""},{"image":"./img/index/loop2.jpg","id":10,"type":1,"url":""}];
 		}
 	});
 	var tpl = $(tpl);
@@ -32,8 +32,7 @@ define(["jq", "text!./tpl/banner/banner.tpl", "css!../css/banner/banner.css"],fu
 	}
 	var width = 105 * (imgArr.length - 1) + 80;
 	tpl.find(".banner-box-block-box").css({
-		width:width + "px",
-		marginLeft:-(width / 2) + "px"
+		width:width + "px"
 	})
 	var index = 0;
 	var timer = null;
@@ -105,7 +104,6 @@ define(["jq", "text!./tpl/banner/banner.tpl", "css!../css/banner/banner.css"],fu
 		//bol 为真时 为轮播状态
 		if(bol){
 			$(".banner-box-loop").show();
-			$(".banner-img").hide();
 			clearInterval(timer);
 			timer = setInterval(function(){
 				if(index == imgArr.length){

@@ -26,7 +26,6 @@
 	.index-content-item-bottom-img-box{
 		width: 319px;
 		height: 249px;
-		border: 1px solid #e9e9e9;
 	}
 	.index-content-item-bottom-content-box{
 		float: right;
@@ -36,7 +35,6 @@
 	}
 	.index-content-item-bottom-content-box-top{
 		height: 232px;
-		line-height: 38px;
 		text-indent: 2em;
 		font-size: 14px;
 		overflow: hidden;
@@ -44,6 +42,12 @@
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 6;
 		overflow: hidden;		
+	}
+	.index-content-item-bottom-content-box-top div:nth-child(1){
+		margin-top:0;
+	}
+	.index-content-item-bottom-content-box-top>div{
+		margin-top:16px;
 	}
 	.school-news-bottom-list,.school-news-bottom-list-a{
 		border-bottom: 1px solid transparent;
@@ -66,15 +70,30 @@
 			<div class="index-content-item-bottom-content-box">
 				<div class="index-content-item-bottom-content-box-top">
 									
-				</div>
-				<div class="index-content-item-bottom-content-box-bottom" style="color: dodgerblue;cursor: pointer;">
-					阅览全文>>
-				</div>				
+				</div>			
 			</div>
 		</div>
 	</div>
-
-	<div class="index-content-item-box" style="float: right;">
+	<div class="index-content-item-box" style="float: right;height:300px;overflow:hidden">
+		<div class="index-content-item-tit-box">
+			<img src="./img/content/content-jiantou.png"/>
+			<span>通知公告</span>
+			<span style="color: #ababab;">Notice Bulletin</span>
+			<span style="color: #ababab;" id="tongzhigonggao" class="index-content-item-tit-more">MORE</span>
+		</div>
+		<div class="index-content-item-bottom-box clear" id="index-content-item-bottom-box-ccc" style="width: 380px;">			
+				<div style="margin-top: 16px;cursor: pointer;display: none;" class="school-news-bottom-list-a school-news-bottom-list-a-clone">
+					<img src="./img/content/content-news3.png" style="width: 20px;vertical-align: middle;"/>
+					<div class="school-news-bottom-list-tit-a" style="display: inline-block;width: 220px;font-size: 14px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;vertical-align: middle;color: grey;">
+						担惊受恐龙卷风多少了多少担惊受恐龙卷风多少了多少
+					</div>
+					<div class="school-news-bottom-list-time-a" style="display: inline-block;color: darkgray;font-size: 12px;vertical-align: middle;">
+						2017-10-12
+					</div>					
+				</div>
+		</div>
+	</div>
+	<div class="index-content-item-box" style="display:none;">
 		<div class="index-content-item-tit-box">
 			<img src="./img/content/content-jiantou.png"/>
 			<span>学院新闻</span>
@@ -100,7 +119,7 @@
 			</div>
 			<div class="school-news-bottom-box" id="school-news-bottom-box-aaa" style="height: 160px;">
 				<!--5-->
-				<div style="margin-top: 16px;cursor: pointer;display: none;" class="school-news-bottom-list school-news-bottom-list-clone">
+				<div style="cursor: pointer;display: none;" class="school-news-bottom-list school-news-bottom-list-clone">
 					<img src="./img/content/content-news3.png" style="width: 20px;vertical-align: middle;"/>
 					<div class="school-news-bottom-list-tit" style="display: inline-block;width: 220px;font-size: 14px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;vertical-align: middle;color: grey;">
 						担惊受恐龙卷风多少了多少担惊受恐龙卷风多少了多少
@@ -113,10 +132,10 @@
 		</div>
 	</div>
 
-	<div class="index-content-item-box" style="float: left;margin-top: 40px;">
+	<div class="index-content-item-box" style="float: left;margin-top: 40px;width:100%">
 		<div class="index-content-item-tit-box">
 			<img src="./img/content/content-jiantou.png"/>
-			<span>学院简报</span>
+			<span>专题导航</span>
 			<span style="color: #ababab;">College Bulletin</span>
 		</div>
 		<div class="index-content-item-bottom-box clear" style="width: 365px;">
@@ -126,10 +145,10 @@
 		</div>
 	</div>
 	
-	<div class="index-content-item-box" style="float: left;margin-top: 40px;margin-left: 35px;">
+	<div class="index-content-item-box" style="float: left;margin-top: 40px;width:100%">
 		<div class="index-content-item-tit-box">
 			<img src="./img/content/content-jiantou.png"/>
-			<span>媒体聚焦</span>
+			<span>党建专题</span>
 			<span style="color: #ababab;">Media Focus</span>
 		</div>
 		<div class="index-content-item-bottom-box clear" style="width: 365px;">
@@ -141,28 +160,6 @@
 			</div>
 
 			 
-		</div>
-	</div>
-
-	<div class="index-content-item-box" style="float: right;margin-top: 24px;">
-		<div class="index-content-item-tit-box">
-			<img src="./img/content/content-jiantou.png"/>
-			<span>通知公告</span>
-			<span style="color: #ababab;">Notice Bulletin</span>
-			<span style="color: #ababab;" id="tongzhigonggao" class="index-content-item-tit-more">MORE</span>
-		</div>
-		<div class="index-content-item-bottom-box clear" id="index-content-item-bottom-box-ccc" style="width: 380px;">			
-				<div style="margin-top: 16px;cursor: pointer;display: none;" class="school-news-bottom-list-a school-news-bottom-list-a-clone">
-					<img src="./img/content/content-news3.png" style="width: 20px;vertical-align: middle;"/>
-					<div class="school-news-bottom-list-tit-a" style="display: inline-block;width: 220px;font-size: 14px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;vertical-align: middle;color: grey;">
-						担惊受恐龙卷风多少了多少担惊受恐龙卷风多少了多少
-					</div>
-					<div class="school-news-bottom-list-time-a" style="display: inline-block;color: darkgray;font-size: 12px;vertical-align: middle;">
-						2017-10-12
-					</div>					
-				</div>
-				
-		
 		</div>
 	</div>
 </div>

@@ -13,8 +13,5 @@
 			<div class="banner-box-block" style="margin-right: 0;"></div>-->
 		</div>		
 	</div>
-	
-	
-	<img src="./img/index/hb-banner1.png" style="opacity: 1;display: none;" class="banner-img"/>
-	
 </div>
+<img src="./img/index/1522310576713.jpg" class="banner-img" style="width:100%;"/>

@@ -33,7 +33,7 @@ require(["jq", "hb", "util", "page", "head", "banner", "index", "secondMenu", "s
 		dataType: 'json',
 		success:function(img){
 			if(img.data.image){
-				$(".banner-img").attr("src",img.data.image)
+				$(".banner-img").attr("src",'./img/index/1522310576713.jpg')//这里路径写死了，需要改
 			}
 			
 		}

@@ -203,7 +203,7 @@ define(["jq", "hb"], function($, hb){
 		$(".content").empty().html(tpl);
 		
 		//新闻头条
-		$(".index-content-item-bottom-content-box-top").html(obj.channel2[0].resume);
+		// $("").html(obj.channel2[0].resume);
 		if(obj.channel2[0].defaultImage){
 			$(".index-content-item-bottom-img-box").find("img").attr("src", obj.channel2[0].defaultImage)
 		}
@@ -289,7 +289,7 @@ define(["jq", "hb"], function($, hb){
 			html.find(".school-news-bottom-list-tit").text(obj.channel4[i].title);
 			html.find(".school-news-bottom-list-time").text(obj.channel4[i].createDate);
 			html.attr("cid", obj.channel4[i].id)
-			$("#school-news-bottom-box-aaa").append(html);
+			$(".index-content-item-bottom-content-box-top").append(html);
 		}
 		
 		$("body").off("click", ".school-news-bottom-list");
