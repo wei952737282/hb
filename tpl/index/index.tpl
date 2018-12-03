@@ -86,6 +86,19 @@
 	.school-news-bottom-list:hover div, .school-news-bottom-list-a:hover div{
 		color: dodgerblue !important; 
 	}
+	#index-content-item-bottom-box-img-box,#index-content-item-bottom-box-photoBox{
+		float:left;
+	}
+	.index-content-item-bottom-box-img-seminar{
+		width:152px;
+		height:100px;
+		float:left;
+		margin:20px 55px;
+	}
+	.index-content-item-bottom-box-img-seminar span{
+		display:block;
+		text-align:center;
+	}
 </style>
 <div class="index-content-box clear">
 	<div class="index-content-item-box">
@@ -93,6 +106,7 @@
 			<img src="./img/content/content-jiantou.png"/>
 			<span>新闻头条</span>
 			<span style="color: #ababab;">Headlines</span>
+			<span style="color: #ababab;" id="xueyuanmore" class="index-content-item-tit-more">MORE</span>
 		</div>
 		<div class="index-content-item-bottom-box clear">
 			<div class="index-content-item-bottom-img-box" style="position: relative;float: left;">
@@ -130,9 +144,8 @@
 	<div class="index-content-item-box" style="display:none;">
 		<div class="index-content-item-tit-box">
 			<img src="./img/content/content-jiantou.png"/>
-			<span>学院新闻</span>
+			<span>新闻资讯</span>
 			<span style="color: #ababab;">College News</span>
-			<span style="color: #ababab;" id="xueyuanmore" class="index-content-item-tit-more">MORE</span>
 		</div>
 		<div class="index-content-item-bottom-box clear" style="width: 380px;">
 			<div class="school-news-top-box">
@@ -172,10 +185,16 @@
 			<span>专题导航</span>
 			<span style="color: #ababab;">College Bulletin</span>
 		</div>
-		<div class="index-content-item-bottom-box clear" style="width: 365px;">
-			<div class="index-content-item-bottom-box-img-box" style="cursor: pointer;width: 365px;height: 210px;">
-			 <img src="./img/content/content-danwei-1.png" style="width: 100%;height: 100%;"/>			
-			</div> 
+		<div class="index-content-item-bottom-box clear" style="width:1200px;">
+			<div id="index-content-item-bottom-box-img-box" style="width:790px;">
+				<div class="index-content-item-bottom-box-img-seminar index-content-item-bottom-box-img-seminar-clone" style="cursor: pointer;display:none">
+					<img src="./img/content/content-danwei-1.png" style="width: 100%;height: 100%;"/>	
+					<span></span>
+				</div>
+			</div>
+			<div id="index-content-item-bottom-box-photoBox" style="width:380px;">
+				<div class="index-content-item-bottom-box-photoLink index-content-item-bottom-box-photoLink-clone"></div>
+			</div>
 		</div>
 	</div>
 	

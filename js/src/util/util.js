@@ -169,7 +169,7 @@ define(["jq", "hb"], function($, hb){
 		var dataArr = [];
 		$.ajax({
 			type:"get",
-			url:$.basePath + "indexPageNews.action",
+			url:$.basePath + "indexPageNewsSecond.action",
 			async:false,
 			dataType: 'json',
 			success:function(jsonData){
@@ -182,8 +182,12 @@ define(["jq", "hb"], function($, hb){
 			channel2:[],//新闻头条
 			channel3:[],//学院简报
 			channel4:[],//学院新闻
-			channel5:[],//媒体聚焦
-			channel6:[],//通知公告
+			channel5:[],//通知公告
+			channel6:[],
+			channel163:[],//新闻资讯
+			channel165:[],//专题导航
+			channel172:[],//图片链接
+			channel145:[],//党建专题
 		};
 		$.each(dataArr, function(i, v) {
 			if(v.channel == 2){
@@ -194,8 +198,16 @@ define(["jq", "hb"], function($, hb){
 				obj.channel4.push(v);
 			}else if(v.channel == 5){
 				obj.channel5.push(v);
-			}else{
+			}else if(v.channel == 6){
 				obj.channel6.push(v);
+			}else if(v.channel == 163){
+				obj.channel163.push(v)
+			}else if(v.channel == 165){
+				obj.channel165.push(v)
+			}else if(v.channel == 172){
+				obj.channel172.push(v)
+			}else if(v.channel == 145){
+				obj.channel145.push(v)
 			}
 		});
 		//
@@ -207,66 +219,67 @@ define(["jq", "hb"], function($, hb){
 		// if(obj.channel2[0].defaultImage){
 		// 	$(".index-content-item-bottom-img-box").find("img").attr("src", obj.channel2[0].defaultImage)
 		// }
-		$(".index-content-item-bottom-content-box-bottom").attr({"cid":obj.channel2[0].id,"showtype":1})
-		$("body").off("click", ".index-content-item-bottom-content-box-bottom");
-		$("body").on("click", ".index-content-item-bottom-content-box-bottom", function(){
-			var data = {
-				slideTit: "首页",
-				slideMenu: [{name:"新闻头条",showType:3,id:$(this).attr("cid"),none:'true'}],
-				activeOrder: 0,
-				showType: 3,
-				leftTit: "新闻头条",
-				breadNav: ["新闻头条", ">", "首页"],
-				cId: $(this).attr("cid")
-			}			
-			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true)
-		})
+		// $(".index-content-item-bottom-content-box-bottom").attr({"cid":obj.channel2[0].id,"showtype":1})
+		// $("body").off("click", ".index-content-item-bottom-content-box-bottom");
+		// $("body").on("click", ".index-content-item-bottom-content-box-bottom", function(){
+		// 	var data = {
+		// 		slideTit: "首页",
+		// 		slideMenu: [{name:"新闻头条",showType:3,id:$(this).attr("cid"),none:'true'}],
+		// 		activeOrder: 0,
+		// 		showType: 3,
+		// 		leftTit: "新闻头条",
+		// 		breadNav: ["新闻头条", ">", "首页"],
+		// 		cId: $(this).attr("cid")
+		// 	}			
+		// 	todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true)
+		// })
 
 		//学院简报
-		if( obj.channel3[0].defaultImage){
-			$(".index-content-item-bottom-box-img-box").find("img").attr("src", obj.channel3[0].defaultImage)
-		}
-		$(".index-content-item-bottom-box-img-box").attr("cid", obj.channel3[0].id)
-		$("body").off("click", ".index-content-item-bottom-box-img-box");
-		$("body").on("click", ".index-content-item-bottom-box-img-box", function(){
-			var data = {
-				slideTit: "首页",
-				slideMenu: [{name:"学院简报",showType:3,id:$(this).attr("cid"),none:'true'}],
-				activeOrder: 0,
-				showType: 3,
-				leftTit: "学院简报",
-				breadNav: ["学院简报", ">", "首页"],
-				cId: $(this).attr("cid")
-			}			
-			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true)			
-		})
+		// if( obj.channel3[0].defaultImage){
+		// 	$(".index-content-item-bottom-box-img-box").find("img").attr("src", obj.channel3[0].defaultImage)
+		// }
+		// $(".index-content-item-bottom-box-img-box").attr("cid", obj.channel3[0].id)
+		// $("body").off("click", ".index-content-item-bottom-box-img-box");
+		// $("body").on("click", ".index-content-item-bottom-box-img-box", function(){
+		// 	var data = {
+		// 		slideTit: "首页",
+		// 		slideMenu: [{name:"学院简报",showType:3,id:$(this).attr("cid"),none:'true'}],
+		// 		activeOrder: 0,
+		// 		showType: 3,
+		// 		leftTit: "学院简报",
+		// 		breadNav: ["学院简报", ">", "首页"],
+		// 		cId: $(this).attr("cid")
+		// 	}			
+		// 	todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true)			
+		// })
 		//媒体聚焦
-		if( obj.channel5[0].defaultImage){
-			$(".index-content-item-bottom-box-meitijujiao").find("img").attr("src", obj.channel5[0].defaultImage)
-		}
-		$(".index-content-item-bottom-box-meitijujiao").find(".index-content-item-bottom-box-meitijujiao-desc").html(obj.channel5[0].resume);
-		$(".index-content-item-bottom-box-meitijujiao").attr("cid", obj.channel5[0].id)
-		$("body").off("click", ".index-content-item-bottom-box-meitijujiao");
-		$("body").on("click", ".index-content-item-bottom-box-meitijujiao", function(){
-			var data = {
-				slideTit: "首页",
-				slideMenu: [{name:"媒体聚焦",showType:3,id:$(this).attr("cid"),none:'true'}],
-				activeOrder: 0,
-				showType: 3,
-				leftTit: "媒体聚焦",
-				breadNav: ["媒体聚焦", ">", "首页"],
-				cId: $(this).attr("cid")
-			}			
-			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true)			
-		})		
+		// if( obj.channel5[0].defaultImage){
+		// 	$(".index-content-item-bottom-box-meitijujiao").find("img").attr("src", obj.channel5[0].defaultImage)
+		// }
+		// $(".index-content-item-bottom-box-meitijujiao").find(".index-content-item-bottom-box-meitijujiao-desc").html(obj.channel5[0].resume);
+		// $(".index-content-item-bottom-box-meitijujiao").attr("cid", obj.channel5[0].id)
+		// $("body").off("click", ".index-content-item-bottom-box-meitijujiao");
+		// $("body").on("click", ".index-content-item-bottom-box-meitijujiao", function(){
+		// 	var data = {
+		// 		slideTit: "首页",
+		// 		slideMenu: [{name:"媒体聚焦",showType:3,id:$(this).attr("cid"),none:'true'}],
+		// 		activeOrder: 0,
+		// 		showType: 3,
+		// 		leftTit: "媒体聚焦",
+		// 		breadNav: ["媒体聚焦", ">", "首页"],
+		// 		cId: $(this).attr("cid")
+		// 	}			
+		// 	todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true)			
+		// })		
 		//学院新闻
-		if(obj.channel4[0].defaultImage){
-			$(".school-news-top-img-box-img-img").attr("src",obj.channel4[0].defaultImage);
-		}
-		$(".school-news-top-img-box-tit-tit").html(obj.channel4[0].title);
-		$(".school-news-top-img-box-desc-desc").html(obj.channel4[0].resume);
-		$(".school-news-top-img-box-con-con").attr("cid",obj.channel4[0].id);
-		//学院新闻 查看详情的点击
+		// if(obj.channel4[0].defaultImage){
+		// 	$(".school-news-top-img-box-img-img").attr("src",obj.channel4[0].defaultImage);
+		// }
+		// $(".school-news-top-img-box-tit-tit").html(obj.channel4[0].title);
+		// $(".school-news-top-img-box-desc-desc").html(obj.channel4[0].resume);
+		// $(".school-news-top-img-box-con-con").attr("cid",obj.channel4[0].id);
+
+		//新闻资讯 查看详情的点击
 		$("body").off("click", ".school-news-top-img-box-con-con");
 		$("body").on("click", ".school-news-top-img-box-con-con", function(){
 			var data = {
@@ -280,22 +293,22 @@ define(["jq", "hb"], function($, hb){
 			}			
 			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true)			
 		})				
-		//学院新闻 列表
+		//新闻资讯 列表
 		$(".school-news-bottom-list-remove").remove();
 		$(".index-content-item-bottom-img-remove").remove();
 		$(".index-content-item-bottom-loopPoint li").remove();
-		for (var i = 0;i < obj.channel4.length;i++) {
+		for (var i = 0;i < obj.channel163.length;i++) {
 			var html = $(".school-news-bottom-list-clone").clone();
 			var img = $(".index-content-item-bottom-img-clone").clone();
 			var li = $("<li></li>");
 			html.show();
 			html.addClass("school-news-bottom-list-remove").removeClass("school-news-bottom-list-clone");
 			img.addClass("index-content-item-bottom-img-remove").removeClass("index-content-item-bottom-img-clone");
-			html.find(".school-news-bottom-list-tit").text(obj.channel4[i].title);
-			html.find(".school-news-bottom-list-time").text(obj.channel4[i].createDate);
-			img.find("img").attr("src",'http://www.hbjsxy.cn'+ obj.channel4[i].defaultImage);
-			html.attr("cid", obj.channel4[i].id)
-			img.attr("cid",obj.channel4[i].id);
+			html.find(".school-news-bottom-list-tit").text(obj.channel163[i].title);
+			html.find(".school-news-bottom-list-time").text(obj.channel163[i].createDate);
+			img.find("img").attr("src",'http://www.hbjsxy.cn'+ obj.channel163[i].defaultImage);
+			html.attr("cid", obj.channel163[i].id)
+			img.attr("cid",obj.channel163[i].id);
 			img.css("display","block");
 			$(".index-content-item-bottom-content-box-top").append(html);
 			$(".index-content-item-bottom-img-box").append(img);
@@ -311,11 +324,11 @@ define(["jq", "hb"], function($, hb){
 			function setTimer(){
 				timer =	setInterval(function(){
 					newsIndex++;
-					if(newsIndex == obj.channel4.length){
+					if(newsIndex == obj.channel163.length){
 						newsIndex = 0;
 					}
 					changeNews(newsIndex);
-				},1500);
+				},3000);
 			}
 
 			$(".index-content-item-bottom-loopPoint li").click(function(){
@@ -333,11 +346,11 @@ define(["jq", "hb"], function($, hb){
 		$("body").on("click", ".school-news-bottom-list", function(){
 			var data = {
 				slideTit: "首页",
-				slideMenu: [{name:"学院新闻",showType:3,id:$(this).attr("cid"),none:'true'}],
+				slideMenu: [{name:"新闻资讯",showType:3,id:$(this).attr("cid"),none:'true'}],
 				activeOrder: 0,
 				showType: 3,
-				leftTit: "学院新闻",
-				breadNav: ["学院新闻", ">", "首页"],
+				leftTit: "新闻资讯",
+				breadNav: ["新闻资讯", ">", "首页"],
 				cId: $(this).attr("cid")
 			}			
 			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true)
@@ -346,11 +359,11 @@ define(["jq", "hb"], function($, hb){
 		$("body").on("click", ".index-content-item-bottom-img", function(){
 			var data = {
 				slideTit: "首页",
-				slideMenu: [{name:"学院新闻",showType:3,id:$(this).attr("cid"),none:'true'}],
+				slideMenu: [{name:"新闻资讯",showType:3,id:$(this).attr("cid"),none:'true'}],
 				activeOrder: 0,
 				showType: 3,
-				leftTit: "学院新闻",
-				breadNav: ["学院新闻", ">", "首页"],
+				leftTit: "新闻资讯",
+				breadNav: ["新闻资讯", ">", "首页"],
 				cId: $(this).attr("cid")
 			}			
 			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true)
@@ -363,21 +376,21 @@ define(["jq", "hb"], function($, hb){
 				slideMenu: [{name:"学院新闻",showType:1,id:4,none:'true'}],
 				activeOrder: 0,
 				showType: 1,
-				leftTit: "学院新闻",
-				breadNav: ["学院新闻", ">", "首页"],
-				cId: 4
+				leftTit: "新闻资讯",
+				breadNav: ["新闻资讯", ">", "首页"],
+				cId: 163
 			}			
 			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data);		
 		})
 		//通知公告
 		$(".school-news-bottom-list-a-remove").remove();
-		for (var i = 0;i < obj.channel6.length;i++) {
+		for (var i = 0;i < obj.channel5.length;i++) {
 			var html = $(".school-news-bottom-list-a-clone").clone();
 			html.show();
 			html.addClass("school-news-bottom-list-a-remove").removeClass("school-news-bottom-list-a-clone");
-			html.find(".school-news-bottom-list-tit-a").text(obj.channel6[i].title);
-			html.find(".school-news-bottom-list-time-a").text(obj.channel6[i].createDate);
-			html.attr("cid", obj.channel6[i].id)
+			html.find(".school-news-bottom-list-tit-a").text(obj.channel5[i].title);
+			html.find(".school-news-bottom-list-time-a").text(obj.channel5[i].createDate);
+			html.attr("cid", obj.channel5[i].id)
 			$("#index-content-item-bottom-box-ccc").append(html);
 		}
 		
@@ -404,10 +417,63 @@ define(["jq", "hb"], function($, hb){
 				showType: 1,
 				leftTit: "通知公告",
 				breadNav: ["通知公告", ">", "首页"],
-				cId: 6
+				cId: 5
 			}			
 			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data);
 		})		
+		//专题导航
+		$(".index-content-item-bottom-box-img-seminar-remove").remove();
+		for (var i = 0;i < obj.channel165.length;i++) {
+			var html = $(".index-content-item-bottom-box-img-seminar-clone").clone();
+			html.show();
+			html.addClass(".index-content-item-bottom-box-img-seminar-remove").removeClass("index-content-item-bottom-box-img-seminar-clone");
+			html.find("img").attr('src','http://www.hbjsxy.cn/' + obj.channel165[i].defaultImage);//图片路径需改为obj.channel165[i].defaultImage
+			html.find("span").text(obj.channel165[i].title)
+			html.attr("cid", obj.channel165[i].id)
+			$("#index-content-item-bottom-box-img-box").append(html);
+		}
+		
+		$("body").off("click", ".index-content-item-bottom-box-img-seminar");
+		$("body").on("click", ".index-content-item-bottom-box-img-seminar", function(){
+			var data = {
+				slideTit: "首页",
+				slideMenu: [{name:"专题导航",showType:3,id:$(this).attr("cid"),none:'true'}],
+				activeOrder: 0,
+				showType: 3,
+				leftTit: "专题导航",
+				breadNav: ["专题导航", ">", "首页"],
+				cId: $(this).attr("cid")
+			}			
+			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true);
+		})
+		//图片链接
+		$(".index-content-item-bottom-box-photoLink-remove").remove();
+		for (var i = 0;i < obj.channel172.length;i++) {
+			var html = $(".index-content-item-bottom-box-photoLink-clone").clone();
+			html.show();
+			html.addClass("index-content-item-bottom-box-photoLink-remove").removeClass("index-content-item-bottom-box-photoLink-clone");
+			html.css({
+				'background-image': 'http://www.hbjsxy.cn/' + obj.channel172[i].defaultImage,//这里需把图片路径改为obj.channel165[i].defaultImage
+				'background-size': '100% 100%'
+			})
+			html.text(obj.channel172[i].title)
+			html.attr("cid", obj.channel172[i].id)
+			$("#index-content-item-bottom-box-photoBox").append(html);
+		}
+		
+		$("body").off("click", ".index-content-item-bottom-box-photoLink");
+		$("body").on("click", ".index-content-item-bottom-box-photoLink", function(){
+			var data = {
+				slideTit: "首页",
+				slideMenu: [{name:"图片链接",showType:3,id:$(this).attr("cid"),none:'true'}],
+				activeOrder: 0,
+				showType: 3,
+				leftTit: "图片链接",
+				breadNav: ["图片链接", ">", "首页"],
+				cId: $(this).attr("cid")
+			}			
+			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true);
+		})
 	}	
 	//secondMenu逻辑
 	function todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, jsonData, bol) {
