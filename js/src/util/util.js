@@ -7,6 +7,8 @@ define(["jq", "hb"], function($, hb){
 	} 
 	// $.basePath = "http://192.168.1.91:8077/HBJSCMS/";
 	$.basePath = "http://www.hbjsxy.cn/HBJSCMS/";
+	
+	$.newsLoopPic = function(){};//定义全局的定时器名
 	return {
 		todoHead: todoHead,
 		todoBanner: todoBanner,
@@ -157,7 +159,7 @@ define(["jq", "hb"], function($, hb){
 	//banner逻辑
 	function todoBanner($, hb, util, page, head, banner, index, secondMenu, secondContent) {
 		
-		
+
 		
 	}	
 	//index逻辑
@@ -314,7 +316,6 @@ define(["jq", "hb"], function($, hb){
 			$(".index-content-item-bottom-img-box").append(img);
 			$(".index-content-item-bottom-loopPoint").append(li);
 		}
-		timer = function(){};
 		function newsLoop(){
 			var newsIndex = 0;
 			function changeNews(i){
@@ -322,7 +323,7 @@ define(["jq", "hb"], function($, hb){
 				$(".index-content-item-bottom-loopPoint li").eq(i).addClass('active').siblings().removeClass('active');
 			}
 			function setTimer(){
-				timer =	setInterval(function(){
+				$.newsLoopPic =	setInterval(function(){
 					newsIndex++;
 					if(newsIndex == obj.channel163.length){
 						newsIndex = 0;
@@ -333,12 +334,11 @@ define(["jq", "hb"], function($, hb){
 
 			$(".index-content-item-bottom-loopPoint li").click(function(){
 				newsIndex = $(this).index();
+				clearInterval($.newsLoopPic);
 				changeNews(newsIndex);
-				clearInterval(timer);
 				setTimer();
 			})
 			changeNews(newsIndex);
-			clearInterval(timer);
 			setTimer();
 		}
 		newsLoop();
@@ -453,10 +453,10 @@ define(["jq", "hb"], function($, hb){
 			html.show();
 			html.addClass("index-content-item-bottom-box-photoLink-remove").removeClass("index-content-item-bottom-box-photoLink-clone");
 			html.css({
-				'background-image': 'http://www.hbjsxy.cn/' + obj.channel172[i].defaultImage,//这里需把图片路径改为obj.channel165[i].defaultImage
+				'background-image': 'url("http://www.hbjsxy.cn/' + obj.channel172[i].defaultImage+'")',//这里需把图片路径改为obj.channel165[i].defaultImage
 				'background-size': '100% 100%'
 			})
-			html.text(obj.channel172[i].title)
+			// html.text(obj.channel172[i].title)//图片正中间的字
 			html.attr("cid", obj.channel172[i].id)
 			$("#index-content-item-bottom-box-photoBox").append(html);
 		}
@@ -474,11 +474,50 @@ define(["jq", "hb"], function($, hb){
 			}			
 			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true);
 		})
-	}	
+		//党建专题
+		$(".index-content-item-bottom-box-meitijujiao-remove").remove();
+		for (var i = 0;i < obj.channel145.length;i++) {
+			var html = $(".index-content-item-bottom-box-meitijujiao-clone").clone();
+			html.show();
+			html.addClass("index-content-item-bottom-box-meitijujiao-remove").removeClass("index-content-item-bottom-box-meitijujiao-clone");
+			html.find('img').attr('src','http://www.hbjsxy.cn/' + obj.channel145[i].defaultImage)
+			html.attr("cid", obj.channel145[i].id)
+			$("#index-content-item-bottom-box-djzt").append(html);
+		}
+		
+		$("body").off("click", ".index-content-item-bottom-box-meitijujiao");
+		$("body").on("click", ".index-content-item-bottom-box-meitijujiao", function(){
+			var data = {
+				slideTit: "首页",
+				slideMenu: [{name:"党建专题",showType:3,id:$(this).attr("cid"),none:'true'}],
+				activeOrder: 0,
+				showType: 3,
+				leftTit: "党建专题",
+				breadNav: ["党建专题", ">", "首页"],
+				cId: $(this).attr("cid")
+			}			
+			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true);
+		})
+		//查看更多
+		$("body").off("click", "#dangjianmore");
+		$("body").on("click","#dangjianmore", function(){
+			var data = {
+				slideTit: "首页",
+				slideMenu: [{name:"党建专题",showType:1,id:4,none:'true'}],
+				activeOrder: 0,
+				showType: 1,
+				leftTit: "党建专题",
+				breadNav: ["党建专题", ">", "首页"],
+				cId: 145
+			}			
+			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data);
+		})
+	}
+	
 	//secondMenu逻辑
 	function todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, jsonData, bol) {
 		banner.changeState(false);
-		//
+		clearInterval($.newsLoopPic);//content内容改变时去掉定时器
 		var tpl = $.h(secondMenu, jsonData)
 		$(".content").empty().html(tpl);
 		var tit = "";

@@ -99,6 +99,22 @@
 		display:block;
 		text-align:center;
 	}
+	.index-content-item-bottom-box-photoLink{
+		height:140px;
+		border:1px solid #ccc;
+		margin-top:10px;
+	}
+	.index-content-item-bottom-box-meitijujiao{
+		cursor: pointer;
+		width:280px;
+		height:124px;
+		margin:0 10px;
+		float:left;
+	}
+	.index-content-item-bottom-box-meitijujiao img{
+		width:100%;
+		height:100%;
+	}
 </style>
 <div class="index-content-box clear">
 	<div class="index-content-item-box">
@@ -193,7 +209,7 @@
 				</div>
 			</div>
 			<div id="index-content-item-bottom-box-photoBox" style="width:380px;">
-				<div class="index-content-item-bottom-box-photoLink index-content-item-bottom-box-photoLink-clone"></div>
+				<div class="index-content-item-bottom-box-photoLink index-content-item-bottom-box-photoLink-clone" style="display:none"></div>
 			</div>
 		</div>
 	</div>
@@ -203,16 +219,14 @@
 			<img src="./img/content/content-jiantou.png"/>
 			<span>党建专题</span>
 			<span style="color: #ababab;">Media Focus</span>
+			<span style="color: #ababab;" id="dangjianmore" class="index-content-item-tit-more">MORE</span>
 		</div>
-		<div class="index-content-item-bottom-box clear" style="width: 365px;">
-			<div class="index-content-item-bottom-box-meitijujiao" style="cursor: pointer;">
-			 <img src="./img/content/content-jujiao.png" style="width: 365px;height: 116px;"/>
-			 <div class="index-content-item-bottom-box-meitijujiao-desc" style="text-indent: 2em;height: 78px;margin-top: 10px;font-size: 14px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;line-height: 25px;">
-			 	
-			 </div>				
-			</div>
-
-			 
-		</div>
+		<div class="index-content-item-bottom-box clear">
+			<div id="index-content-item-bottom-box-djzt">
+				<div class="index-content-item-bottom-box-meitijujiao index-content-item-bottom-box-meitijujiao-clone" style="display:none;">
+					<img src="./img/content/content-jujiao.png"/>
+				</div>
+			</div>				
+		</div>	 
 	</div>
 </div>
