@@ -58,6 +58,10 @@
 		opacity:1;
 		background:#eee;
 	}
+	#index-content-item-bottom-box-ccc{
+		position:absolute;
+		margin-top:-16px;
+	}
 	.index-content-item-bottom-content-box{
 		float: right;
 		width: 450px;
@@ -120,7 +124,7 @@
 	<div class="index-content-item-box">
 		<div class="index-content-item-tit-box">
 			<img src="./img/content/content-jiantou.png"/>
-			<span>新闻头条</span>
+			<span>新闻资讯</span>
 			<span style="color: #ababab;">Headlines</span>
 			<span style="color: #ababab;" id="xueyuanmore" class="index-content-item-tit-more">MORE</span>
 		</div>
@@ -138,8 +142,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="index-content-item-box" style="float: right;height:300px;overflow:hidden">
-		<div class="index-content-item-tit-box">
+	<div class="index-content-item-box" style="float: right;height:290px;overflow:hidden;position:relative;width: 380px;">
+		<div class="index-content-item-tit-box" style="position:relative">
 			<img src="./img/content/content-jiantou.png"/>
 			<span>通知公告</span>
 			<span style="color: #ababab;">Notice Bulletin</span>

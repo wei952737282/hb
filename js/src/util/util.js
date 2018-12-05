@@ -503,7 +503,7 @@ define(["jq", "hb"], function($, hb){
 		$("body").on("click","#dangjianmore", function(){
 			var data = {
 				slideTit: "首页",
-				slideMenu: [{name:"党建专题",showType:1,id:4,none:'true'}],
+				slideMenu: [{name:"党建专题",showType:1,id:159,none:'true'}],
 				activeOrder: 0,
 				showType: 1,
 				leftTit: "党建专题",
