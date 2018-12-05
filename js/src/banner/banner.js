@@ -6,7 +6,7 @@ define(["jq", "text!./tpl/banner/banner.tpl", "css!../css/banner/banner.css"],fu
 		dataType: 'json',
 		async:false,
 		success:function(img){
-			imgArr = [{"image":"./img/index/loop1.jpg","id":9,"type":2,"url":""},{"image":"./img/index/loop2.jpg","id":10,"type":1,"url":""}];
+			imgArr = img.data;
 		}
 	});
 	var tpl = $(tpl);
@@ -19,7 +19,7 @@ define(["jq", "text!./tpl/banner/banner.tpl", "css!../css/banner/banner.css"],fu
 			})
 		}
 		html.attr("href",imgArr[i].url);
-		html.find("img").attr("src",imgArr[i].image);
+		html.find("img").attr("src",'http://www.hbjsxy.cn/'+imgArr[i].image);
 		tpl.find(".banner-box-block-box").before(html);
 		var htmlBlocl = $('<div class="banner-box-block"></div>');
 		if(i == 0){
@@ -32,7 +32,8 @@ define(["jq", "text!./tpl/banner/banner.tpl", "css!../css/banner/banner.css"],fu
 	}
 	var width = 105 * (imgArr.length - 1) + 80;
 	tpl.find(".banner-box-block-box").css({
-		width:width + "px"
+		width:width + "px",
+		marginLeft:-(width / 2) + "px"
 	})
 	var index = 0;
 	var timer = null;
@@ -104,6 +105,7 @@ define(["jq", "text!./tpl/banner/banner.tpl", "css!../css/banner/banner.css"],fu
 		//bol 为真时 为轮播状态
 		if(bol){
 			$(".banner-box-loop").show();
+			$(".banner-img").hide();
 			clearInterval(timer);
 			timer = setInterval(function(){
 				if(index == imgArr.length){

@@ -25,7 +25,7 @@
 	}	
 	.index-content-item-bottom-img-box{
 		width: 319px;
-		height: 249px;
+		height: 170px;
 	}
 	.index-content-item-bottom-img{
 		position:absolute;
@@ -40,12 +40,14 @@
 		left:0;
 		right:0;
 		margin: 0 auto;
-		bottom:20px;
+		bottom:5px;
 		z-index:10;
 	}
 	.index-content-item-bottom-loopPoint li{
 		list-style:none;
 		float:left;
+		text-align:center;
+		color:#333;
 		width:20px;
 		height:20px;
 		margin:0 2px;
@@ -61,17 +63,15 @@
 	#index-content-item-bottom-box-ccc{
 		position:absolute;
 		transition-duration:1000ms;
-		margin-top:-16px;
 	}
 	.index-content-item-bottom-content-box{
 		float: right;
 		width: 450px;
-		height: 250px;
+		height: 170px;
 		margin-left: 20px;
 	}
 	.index-content-item-bottom-content-box-top{
-		height: 232px;
-		text-indent: 2em;
+		height: 170px;
 		font-size: 14px;
 		overflow: hidden;
 		display: -webkit-box;
@@ -88,11 +88,19 @@
 	.school-news-bottom-list,.school-news-bottom-list-a{
 		border-bottom: 1px solid transparent;
 	}
+	.school-news-bottom-list span{
+		font-size:14px;
+    vertical-align: middle;
+    color: grey;
+	}
 	.school-news-bottom-list:hover div, .school-news-bottom-list-a:hover div{
 		color: dodgerblue !important; 
 	}
-	#index-content-item-bottom-box-img-box,#index-content-item-bottom-box-photoBox{
+	#index-content-item-bottom-box-img-box{
 		float:left;
+	}
+	#index-content-item-bottom-box-photoBox{
+		float:right;
 	}
 	.index-content-item-bottom-box-img-seminar{
 		width:152px;
@@ -132,7 +140,7 @@
 		<div class="index-content-item-bottom-box clear">
 			<div class="index-content-item-bottom-img-box" style="position: relative;float: left;">
 				<div class="index-content-item-bottom-img index-content-item-bottom-img-clone" style="display:none;">
-					<img src="./img/content/content-news1.png" style="width: 300px;height: 240px;float:left;margin:auto"/>
+					<img src="./img/content/content-news1.png" style="width: 300px;height:170px;float:left;margin:auto"/>
 				</div>
 				<ul class="index-content-item-bottom-loopPoint"></ul>
 			</div>
@@ -143,14 +151,14 @@
 			</div>
 		</div>
 	</div>
-	<div class="index-content-item-box" style="float: right;height:290px;overflow:hidden;position:relative;width: 380px;">
+	<div class="index-content-item-box" style="float: right;height:230px;overflow:hidden;position:relative;width: 380px;">
 		<div class="index-content-item-tit-box" style="position:relative">
 			<img src="./img/content/content-jiantou.png"/>
 			<span>通知公告</span>
 			<span style="color: #ababab;">Notice Bulletin</span>
 			<span style="color: #ababab;" id="tongzhigonggao" class="index-content-item-tit-more">MORE</span>
 		</div>
-		<div class="scrollArea" style="position:relative;height:240px;overflow:hidden;">
+		<div class="scrollArea" style="position:relative;height:200px;overflow:hidden;margin-top:-22px;">
 			<div class="index-content-item-bottom-box clear" id="index-content-item-bottom-box-ccc" style="width: 380px;">			
 					<div style="margin-top: 16px;cursor: pointer;display: none;" class="school-news-bottom-list-a school-news-bottom-list-a-clone">
 						<img src="./img/content/content-news3.png" style="width: 20px;vertical-align: middle;"/>
@@ -191,6 +199,7 @@
 				<!--5-->
 				<div style="cursor: pointer;display: none;" class="school-news-bottom-list school-news-bottom-list-clone">
 					<img src="./img/content/content-news3.png" style="width: 20px;vertical-align: middle;"/>
+					<span></span>
 					<div class="school-news-bottom-list-tit" style="display: inline-block;width: 220px;font-size: 14px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;vertical-align: middle;color: grey;">
 						担惊受恐龙卷风多少了多少担惊受恐龙卷风多少了多少
 					</div>

@@ -13,5 +13,5 @@
 			<div class="banner-box-block" style="margin-right: 0;"></div>-->
 		</div>		
 	</div>
+	<img src="./img/index/1522310576713.jpg" class="banner-img" style="width:100%;"/>
 </div>
-<img src="./img/index/1522310576713.jpg" class="banner-img" style="width:100%;"/>

@@ -106,6 +106,10 @@ define(["jq", "hb"], function($, hb){
 				breadNav: [],
 				cId: ""
 			}
+			if($(this).attr("cid")==162){
+				window.open("http://www.hbjsxy.cn/HBJSCMS/hb/sign.html");
+				return;
+			}
 			if(showType == 4){
 				data.breadNav = [$.trim($(this).text()), ">", $.trim($(this).parents(".head-head-box-bottom-item").find(".head-head-box-bottom-item-click").text())];
 				data.leftTit = $.trim($(this).text());
@@ -307,9 +311,11 @@ define(["jq", "hb"], function($, hb){
 			var html = $(".school-news-bottom-list-clone").clone();
 			var img = $(".index-content-item-bottom-img-clone").clone();
 			var li = $("<li></li>");
+			li.text(i+1);
 			html.show();
 			html.addClass("school-news-bottom-list-remove").removeClass("school-news-bottom-list-clone");
 			img.addClass("index-content-item-bottom-img-remove").removeClass("index-content-item-bottom-img-clone");
+			html.find("span").text(i+1+'、')
 			html.find(".school-news-bottom-list-tit").text(obj.channel163[i].title);
 			html.find(".school-news-bottom-list-time").text(obj.channel163[i].createDate);
 			img.find("img").attr("src",'http://www.hbjsxy.cn'+ obj.channel163[i].defaultImage);
