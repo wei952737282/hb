@@ -60,6 +60,7 @@
 	}
 	#index-content-item-bottom-box-ccc{
 		position:absolute;
+		transition-duration:1000ms;
 		margin-top:-16px;
 	}
 	.index-content-item-bottom-content-box{
@@ -149,16 +150,18 @@
 			<span style="color: #ababab;">Notice Bulletin</span>
 			<span style="color: #ababab;" id="tongzhigonggao" class="index-content-item-tit-more">MORE</span>
 		</div>
-		<div class="index-content-item-bottom-box clear" id="index-content-item-bottom-box-ccc" style="width: 380px;">			
-				<div style="margin-top: 16px;cursor: pointer;display: none;" class="school-news-bottom-list-a school-news-bottom-list-a-clone">
-					<img src="./img/content/content-news3.png" style="width: 20px;vertical-align: middle;"/>
-					<div class="school-news-bottom-list-tit-a" style="display: inline-block;width: 220px;font-size: 14px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;vertical-align: middle;color: grey;">
-						担惊受恐龙卷风多少了多少担惊受恐龙卷风多少了多少
+		<div class="scrollArea" style="position:relative;height:240px;overflow:hidden;">
+			<div class="index-content-item-bottom-box clear" id="index-content-item-bottom-box-ccc" style="width: 380px;">			
+					<div style="margin-top: 16px;cursor: pointer;display: none;" class="school-news-bottom-list-a school-news-bottom-list-a-clone">
+						<img src="./img/content/content-news3.png" style="width: 20px;vertical-align: middle;"/>
+						<div class="school-news-bottom-list-tit-a" style="display: inline-block;width: 220px;font-size: 14px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;vertical-align: middle;color: grey;">
+							担惊受恐龙卷风多少了多少担惊受恐龙卷风多少了多少
+						</div>
+						<div class="school-news-bottom-list-time-a" style="display: inline-block;color: darkgray;font-size: 12px;vertical-align: middle;">
+							2017-10-12
+						</div>					
 					</div>
-					<div class="school-news-bottom-list-time-a" style="display: inline-block;color: darkgray;font-size: 12px;vertical-align: middle;">
-						2017-10-12
-					</div>					
-				</div>
+			</div>
 		</div>
 	</div>
 	<div class="index-content-item-box" style="display:none;">

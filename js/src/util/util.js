@@ -8,7 +8,8 @@ define(["jq", "hb"], function($, hb){
 	// $.basePath = "http://192.168.1.91:8077/HBJSCMS/";
 	$.basePath = "http://www.hbjsxy.cn/HBJSCMS/";
 	
-	$.newsLoopPic = function(){};//定义全局的定时器名
+	$.newsLoopPic = function(){};//定义新闻列表全局的定时器名
+	$.noticeTimer = function(){};//定义通知公告全局的定时器名
 	return {
 		todoHead: todoHead,
 		todoBanner: todoBanner,
@@ -189,7 +190,8 @@ define(["jq", "hb"], function($, hb){
 			channel163:[],//新闻资讯
 			channel165:[],//专题导航
 			channel172:[],//图片链接
-			channel145:[],//党建专题
+			channel145:[],//
+			channel159:[],//党建专题
 		};
 		$.each(dataArr, function(i, v) {
 			if(v.channel == 2){
@@ -210,6 +212,8 @@ define(["jq", "hb"], function($, hb){
 				obj.channel172.push(v)
 			}else if(v.channel == 145){
 				obj.channel145.push(v)
+			}else if(v.channel == 159){
+				obj.channel159.push(v)
 			}
 		});
 		//
@@ -393,7 +397,20 @@ define(["jq", "hb"], function($, hb){
 			html.attr("cid", obj.channel5[i].id)
 			$("#index-content-item-bottom-box-ccc").append(html);
 		}
-		
+		function autoScroll(){
+			var height = 0;
+			$.noticeTimer = setInterval(function(){
+				height += $('.school-news-bottom-list-a').height() + 16;
+				if(height>=$('#index-content-item-bottom-box-ccc').height()-240){
+					$('#index-content-item-bottom-box-ccc').css({'transform':'translate3D(0,0,0)','transition-duration':'0ms'});
+					height = 0;
+				}else{
+					$('#index-content-item-bottom-box-ccc').css({'transform':'translate3D(0,' + -height + 'px,0)','transition-duration':'1000ms'});
+				}
+			},3000)
+
+		}
+		autoScroll()
 		$("body").off("click", ".school-news-bottom-list-a");
 		$("body").on("click", ".school-news-bottom-list-a", function(){
 			var data = {
@@ -489,12 +506,12 @@ define(["jq", "hb"], function($, hb){
 		$("body").on("click", ".index-content-item-bottom-box-meitijujiao", function(){
 			var data = {
 				slideTit: "首页",
-				slideMenu: [{name:"党建专题",showType:3,id:$(this).attr("cid"),none:'true'}],
+				slideMenu: [{name:"党建专题",showType:1,id:$(this).attr("cid"),none:'true'}],
 				activeOrder: 0,
-				showType: 3,
+				showType: 1,
 				leftTit: "党建专题",
 				breadNav: ["党建专题", ">", "首页"],
-				cId: $(this).attr("cid")
+				cId: 159
 			}			
 			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data, true);
 		})
@@ -503,12 +520,12 @@ define(["jq", "hb"], function($, hb){
 		$("body").on("click","#dangjianmore", function(){
 			var data = {
 				slideTit: "首页",
-				slideMenu: [{name:"党建专题",showType:1,id:159,none:'true'}],
+				slideMenu: [{name:"党建专题",showType:1,id:$(this).attr("cid"),none:'true'}],
 				activeOrder: 0,
 				showType: 1,
 				leftTit: "党建专题",
 				breadNav: ["党建专题", ">", "首页"],
-				cId: 145
+				cId: 159
 			}			
 			todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, data);
 		})
@@ -517,6 +534,7 @@ define(["jq", "hb"], function($, hb){
 	//secondMenu逻辑
 	function todosecondMenu($, hb, util, page, head, banner, index, secondMenu, secondContent, jsonData, bol) {
 		banner.changeState(false);
+		clearInterval($.newsLoopPic);//content内容改变时去掉定时器
 		clearInterval($.newsLoopPic);//content内容改变时去掉定时器
 		var tpl = $.h(secondMenu, jsonData)
 		$(".content").empty().html(tpl);
