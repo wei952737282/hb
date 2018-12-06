@@ -61,6 +61,8 @@ div.head-head-box-search{
 .head-head-box-bottom img{
 	float: left;
 	margin-left: 110px;
+	width:332px;
+	height:70px;
 }
 .head-head-box-bottom div{
 	float: right;
@@ -74,7 +76,6 @@ div.head-head-box-search{
 	padding-bottom: 25px;
 	font-size: 20px;
 	font-weight: 300;
-	margin-left:20px;
 }
 .head-head-box-bottom-item:hover{
 	color: dodgerblue;	

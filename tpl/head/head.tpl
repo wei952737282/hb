@@ -1,9 +1,9 @@
 <div class="head-head-box">
 	<div class="head-head-box-top clear">
-		<div class="head-head-box-word">
+		<!--<div class="head-head-box-word">
 			学生 | 教工 | 校友 | 考生 | 访客
 		</div>
-		<!--<div class="head-head-box-href">
+		<div class="head-head-box-href">
 			<a href="">
 				<img src="../../img/index/hb-head-xinximenhu.png"/>
 				<span>信息门户</span>
