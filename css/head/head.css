@@ -74,9 +74,14 @@ div.head-head-box-search{
 	padding-bottom: 25px;
 	font-size: 20px;
 	font-weight: 300;
+	margin-left:20px;
 }
 .head-head-box-bottom-item:hover{
 	color: dodgerblue;	
+}
+.head-head-box-bottom-item:hover .head-head-box-bottom-item-list{
+	opacity: 1;
+	z-index:10
 }
 .head-head-box-bottom-item-active{
 	color: dodgerblue;	
@@ -88,11 +93,12 @@ div.head-head-box-search{
 	top: 45px;
 	background: white;
 	padding: 10px;
-	z-index: 10;
+	z-index: -1;
 	cursor: pointer;
 	padding-bottom: 0px;
 	margin-top: 0 !important;
-	display: none;
+	opacity: 0;
+	transition: opacity 1s;
 }
 div.head-head-box-bottom-item-list-word{
 	text-align: center;

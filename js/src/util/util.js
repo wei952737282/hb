@@ -462,7 +462,7 @@ define(["jq", "hb"], function($, hb){
 				slideTit: "首页",
 				slideMenu: [{name:"专题导航",showType:3,id:$(this).attr("cid"),none:'true'}],
 				activeOrder: 0,
-				showType: 3,
+				showType: 1,
 				leftTit: "专题导航",
 				breadNav: ["专题导航", ">", "首页"],
 				cId: $(this).attr("cid")
@@ -490,7 +490,7 @@ define(["jq", "hb"], function($, hb){
 				slideTit: "首页",
 				slideMenu: [{name:"图片链接",showType:3,id:$(this).attr("cid"),none:'true'}],
 				activeOrder: 0,
-				showType: 3,
+				showType: 1,
 				leftTit: "图片链接",
 				breadNav: ["图片链接", ">", "首页"],
 				cId: $(this).attr("cid")

@@ -98,6 +98,8 @@
 	}
 	#index-content-item-bottom-box-img-box{
 		float:left;
+		height:302px;
+		border:1px solid #ccc;
 	}
 	#index-content-item-bottom-box-photoBox{
 		float:right;
@@ -115,7 +117,9 @@
 	.index-content-item-bottom-box-photoLink{
 		height:140px;
 		border:1px solid #ccc;
-		margin-top:10px;
+	}
+	.index-content-item-bottom-box-photoLink:nth-child(3){
+		margin-top:20px;
 	}
 	.index-content-item-bottom-box-meitijujiao{
 		cursor: pointer;
@@ -139,9 +143,6 @@
 		</div>
 		<div class="index-content-item-bottom-box clear">
 			<div class="index-content-item-bottom-img-box" style="position: relative;float: left;">
-				<div class="index-content-item-bottom-img index-content-item-bottom-img-clone" style="display:none;">
-					<img src="./img/content/content-news1.png" style="width: 300px;height:170px;float:left;margin:auto"/>
-				</div>
 				<ul class="index-content-item-bottom-loopPoint"></ul>
 			</div>
 			<div class="index-content-item-bottom-content-box">
@@ -183,6 +184,10 @@
 				<div class="school-news-top-img-box" style="display: inline-block;width: 139px;height: 84px;border: 1px solid #e9e9e9;position: relative;">
 					<img class="school-news-top-img-box-img-img" src="./img/content/content-news2.png" style="width: 135px;height: 80px;position: absolute;left: 0;top: 0;right: 0;bottom: 0;margin: auto;"/>
 				</div>
+				
+			<div class="index-content-item-bottom-img index-content-item-bottom-img-clone" style="display:none;">
+				<img src="./img/content/content-news1.png" style="width: 300px;height:170px;float:left;margin:auto"/>
+			</div>
 				<div style="display: inline-block;height: 87px;vertical-align: top;">
 					<div class="school-news-top-img-box-tit-tit" style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;width: 230px;">
 						2017正式祝贺我校2017正式祝贺我校2017正式祝贺我校
